@@ -1,16 +1,14 @@
 import os
 
 class Config():
-
-    SECRET_KEY = 'derokip34'
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://derrick:montolivo@localhost/group_project'
 
 class ProdConfig(Config):
 
     pass
 
 class DevConfig(Config):
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://derrick:montolivo@localhost/group_project'
     DEBUG = True
 
 config_options = {
