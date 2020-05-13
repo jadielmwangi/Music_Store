@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Music store
+We have just seen you have signed up for our Music store application and want to welcome you to the family
