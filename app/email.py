@@ -5,7 +5,7 @@ from . import mail
 sender_email = 'derrickip34@gmail.com'
 
 def send_welcome_email(to,**kwargs):
-    msg = Message('Welcome',sender=sender_email,recipients=[to])
+    msg = Message('Welcome',sender=('Music Store', sender_email),recipients=[to])
     msg.body = render_template('email/welcome_user.txt')
     msg.html = render_template('email/welcome_user.html')
     mail.send(msg)
