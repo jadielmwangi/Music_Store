@@ -1,10 +1,10 @@
-from flask import render_template,redirect,url_for,flash,request
+from flask import render_template,redirect,url_for,request
 from ..models import User
 from .forms import RegistrationForm
 from flask_login import login_user,logout_user,login_required
 from .. import db
 from . import auth
-from ..email import send_welcome_email,send_daily_email
+from ..email import send_welcome_email
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
@@ -16,6 +16,5 @@ def register():
 
         send_welcome_email(user.email)
 
-        return redirect(url_for('auth.login'))
         title = "New Account"
     return render_template('auth/register.html', registration_form = form)

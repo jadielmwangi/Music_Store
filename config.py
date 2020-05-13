@@ -5,14 +5,11 @@ class Config():
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = '20-05-1939'
 
-    CELERY_BROKER_URL = 'redis://localhost:6379/0'
-    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    MAIL_USERNAME = 'derrickip34@gmail.com'
+    MAIL_PASSWORD = 'Enkay2008'
 
 class ProdConfig(Config):
 
