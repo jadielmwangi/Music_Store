@@ -1,4 +1,4 @@
-# from flask import render_template,redirect,url_for, abort,request,flash
+
 from flask import render_template,redirect,url_for, abort
 
 from . import main
@@ -23,30 +23,6 @@ def index():
 
     return render_template('index.html', title = title)
 
-
-@main.route('/home')
-def about():
-    '''
-    View root page function that returns the home page and its data
-    '''
-    title = 'Welcome to music store'
-    return render_template('home.html', title=title)
-
-@main.route('/about')
-def about():
-    '''
-    View root page function that returns the about page and its data
-    '''
-    title = ''
-    return render_template('about.html', title=title)
-
-@main.route('/contact')
-def contact():
-    '''
-    View root page function that returns the contact page and its data
-    '''
-    title = ''
-    return render_template('contacts.html', title = title)
 
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
@@ -87,6 +63,7 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
     
     return render_template('profile/update.html',form =form)
+
 
 
 
