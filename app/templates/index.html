@@ -15,33 +15,40 @@
 <!-- Content block -->
 {% block content %}
 
-<div class="container">
+<div class="container"  >
+  
 
   {% if current_user.is_authenticated%}
-    <h1>Hello {{current_user.username}}</h1>
+    <h1>Hello {{current_user.username}}, Welcome to music_store app.This is the  best place to be: </h1>
   {% else %}
     <h1>Hello stranger</h1>
+
+
   {%endif%}
     <form>
-        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+        <input type="text" name="music_query" placeholder="Search for  your favourite Music" class="form-control">
         <input type="submit"  value="Submit" class="btn btn-default">
     </form>
 
+    <div class="row">
+      <div class=" col-md-12 mx-auto bg-light">
+        
+        <h3> music_store app is an application where: </h3>
+
+        
+      </div>
+    </div>
+  
+
 </div>
-<div class="row">
-  <div class=" col-md-12 mx-auto bg-light">
-    <h3> Welcome to music_store app.This is where you belong </h3>
-    
-  </div>
-</div>
+
 
 
 {% endblock%}
 
 
 
-
-
+<!-- blog code -->
 
 
 
