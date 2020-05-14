@@ -1,8 +1,73 @@
-<ul class="nav navbar-nav navbar-right">
-    {% if current_user.is_authenticated %}
-    <li style="color:white;padding:15px;">{{current_user.username}}</li>
-    <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-    {% else %}
-    <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-    {%endif%}
-</ul>
+<nav class="navbar">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li>
+          <a class="text-light" href="/"><i class="fa fa-home "></i><strong>Home</strong> </a>
+        </li> -->
+      <li>
+        <a class="text-light" href="{{ url_for('main.about')}}"><strong>Home </strong> </a>
+      </li>
+
+      <li>
+        <a class="text-light" href="{{ url_for('main.about')}}"><strong>About us </strong> </a>
+      </li>
+      <li>
+        <a class="text-light" href="{{ url_for('main.contact')}}"><strong>Contacts </strong> </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if current_user.is_authenticated %}
+
+      <li class="dropdown"><a href="#" class="dropdown-toggle text-light" data-toggle="dropdown"><i
+            class="fa fa-user"></i><strong class="ml-2">Welcome: {{current_user.username}}</strong> <b
+            class="caret"></b></a>
+        <ul class="dropdown-menu bg-dark text-center">
+
+          <li><a href="{{url_for('main.profile',uname=current_user.username)}} " class="text-light "><i
+                class="icon-envelope"></i><strong>Your profile</strong></a></li>
+          <li class="divider"></li>
+          <div class="dropdown-divider"></div>
+          <li><a href="{{url_for('auth.logout')}}" class="text-light "><i class="fa fa-sign-out mr-2"></i><strong>Log
+                out</strong></a></li>
+        </ul>
+      </li>
+      {% else %}
+      <li><a href="{{url_for('auth.login')}}" class="text-light"><i class="fa fa-sign-in mr-2"></i><strong>Log
+            In</strong></a></li>
+      {%endif%}
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- <div class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"> music_store </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              {% if current_user.is_authenticated %}
+              <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+              <li><a href="{{url_for('auth.logout')}}">log out</a></li>
+              {% else %}
+              <li><a href="{{url_for('auth.login')}}">log in</a></li>
+              {%endif%}
+            </ul>
+        </div>
+
+    </div>
+</div>
+ -->

@@ -1,0 +1,113 @@
+h1{
+    text-align: center;
+    color: red;
+    font-size: larger;
+    font-family: 'Merriweather', serif;
+ }
+  h3{
+      text-align: center;
+      font-family: 'Balsamiq Sans', cursive;
+      color:red;
+      font-size: larger;
+  }
+  
+  .text-light{
+     margin-left: 20px;
+     margin-right: 20px;
+     padding-right: 15px;
+ 
+  }
+  container-fluid login{
+     text-align: center;
+     color: red;
+  }
+  
+ 
+  h2{
+    text-align: center;
+    font-family: 'Balsamiq Sans', cursive;
+    color:red;
+    font-size: larger;
+ }
+ 
+  p{
+      font-size:large;
+      font-family: 'Heebo', sans-serif;
+      text-align: center;
+  }
+ 
+ 
+ 
+  .all{
+    background-color: darkgray;
+     margin:80px;
+     background-repeat: no-repeat;
+  }
+  .register{
+    background-color: darkgray;
+    min-height: 80vh;
+    margin:80px;
+    border-radius: 28px;
+    font-family: 'Heebo', sans-serif;
+ }
+ 
+ 
+  .contact{
+     background-color: darkgray;
+     min-height: 80vh;
+     margin:80px;
+     border-radius: 28px;
+  }
+  .login{
+     background-color: darkgray;
+     margin:auto;
+     border-radius: 15x;
+ 
+  }
+ 
+ 
+  .new-blog{
+     background-color: darkgray;
+     border-radius: 20px;
+     font-family: 'Heebo', sans-serif;
+  }
+  .new{
+     font-family: 'Heebo', sans-serif;
+     color:black;
+     font-size:large;
+     margin:30px;
+     text-align: center;
+  }
+  
+ 
+  .navbar-brand{
+      text-align: center;
+  }
+ 
+  .view-comment{
+    background-color:lawngreen;
+    font-family: 'Balsamiq Sans', cursive;
+ 
+    font-size:large;
+ }
+ 
+ 
+  .navbar{
+      background-color: rgb(240, 250, 255);
+      padding:25px;
+      margin-top:10px;
+  }
+ 
+ 
+  .comment{
+     background-color:green;
+     font-family: 'Balsamiq Sans', cursive;
+ 
+     font-size:large;
+  }
+ 
+  
+  .singup{
+     text-align: center;
+     color: red;
+  }
