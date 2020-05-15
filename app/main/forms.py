@@ -1,9 +1,8 @@
-from flask import render_template
-from . import main
+from flask_wtf import FlaskForm
+from wtforms import StringField,SelectField,TextAreaField,SubmitField
+from wtforms.validators import Required
 
-@main.app_errorhandler(404)
-def four_Ow_four(error):
-    '''
-    Function to render the 404 error page
-    '''
-    return render_template('fourOwfour.html'),404
+
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    submit = SubmitField('Submit')
