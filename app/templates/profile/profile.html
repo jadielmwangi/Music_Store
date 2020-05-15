@@ -1,54 +1,73 @@
-{% extends 'base.html'%}
-{% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}">
-{% endblock %}
-
+{% include 'base.html'%}
 
 {% block content %}
-
-  <div class="container prof">
-    <div class="card">
-      <!-- displaying  Username-->
-        
-          <div class="card-header">  
-            <h1>  Hey {{user.username| capitalize}} </h1>
-          </div>
-          <div class="card-title">
-            {% if user.profile_pic_path %}
-            <img src="{{url_for('static',filename=user.profile_pic_path)}}" class="rounded-circle card-image-top img-fluid" alt="" class="img-thumbnail">
-            {%else%}
-            <h3> kindly upload a profile picture:</h3>
-            {% endif %}
-
-            {% if user == current_user %}
-
-            <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post"
-              enctype="multipart/form-data">
-              <input type="file" name="photo" class="form-control sub" required>
-              <button type="submit">Submit</button>
-            </form>
-            {% endif %}
-          </div>
-          <div class="card-body">
-            
-            <!--Displaying user bio-->
-            {% if user.bio %}
+<div class="container">
+  <section class="se-container">
+    <!-- displaying  Username-->
+    <div class="se-slope text-center">
+      <article class="se-content">
+        <h3 class="text-center">
+          Hey {{user.username| capitalize}}
+        </h3>
+        <hr>
+        {% if user.profile_pic_path %}
+        <img src="{{url_for('static',filename=user.profile_pic_path)}}" class="rounded-circle card-image-top img-fluid"
+          alt="" class="img-thumbnail" style="width: 150px;height: 150px;">
+        {%else%}
+        <h4 class="textma"> kindly upload a profile picture:</h4>
+        {% endif %}</p>
+        <p class="textma text-center"><em>{% if user.bio %}
             <p> {{user.bio}}</p>
             {%else%}
             <p> {{user.username| capitalize}} has no bio </p>
             {% endif %}
-            
-            {% if user == current_user %}
-            <button><a class="bio" href="{{url_for('main.update_profile',uname=user.username)}}">Edit your profile here:</a></button>
-            {% endif %}
-
-          </div>
-        
-      
-
-      
+          </em></p>
+      </article>
     </div>
-  </div>
+    <div class="se-slope">
+      <article class="se-content text-center">
+        <!--Displaying user bio-->
+        <h3 class="text-centre">Update Profile</h3>
+        <br>
+        {% if user == current_user %}
+        <button><a class="bio" href="{{url_for('main.update_profile',uname=user.username)}}">Edit your profile
+            here:</a></button>
+        {% endif %}
+        <br>
+        <br>
+        {% if user == current_user %}
+        <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+          <input type="file" name="photo" class="form-control sub" required>
+          <button type="submit">Submit</button>
+        </form>
+        {% endif %}
 
-  {% endblock %}
+      </article>
+    </div>
+    <div class="se-slope">
+      <article class="se-content text-center">
+        {% if user == current_user %}
+
+        <h3>Share Your Jam</h3>
+        <h4>ALBUM COVER</h4>
+        <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+          <input type="file" name="photo" class="form-control sub" required>
+          <button type="submit">Submit</button>
+        </form>
+        <h4>MP3</h4>
+        <form action="{{url_for('main.upload_music',uname=user.username)}}" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+
+            <div class="custom-music">
+              <input type="file" class="custom-music-input" name="mp3" id="music">
+              <label for="music" class="custom-music-label"></label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+        {% endif %}
+      </article>
+    </div>
+  </section>
+</div>
+{% endblock %}

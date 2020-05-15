@@ -1,0 +1,86 @@
+{% include 'base.html'%}
+{% block styles%}
+<link rel="stylesheet" bref="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content%}
+<section class="container text-center">
+    <div class="parent">
+        <div class="left">
+            <article>
+                <h3>Drown</h3>
+                <img class="img-thumbnail" src="../static/photos/kovic.jpeg" alt="">
+                <br>
+                <audio controls>
+                    <source
+                        src="../static/music/Kovic x Hight _ Drown (Remix) _ feat. Dancer Josh Killacky _ Official.mp3">
+                </audio>
+                <p class="textma text-center"><em>By: Kovic x Hight</em></p>
+            </article>
+        </div>
+        <div class="right">
+            <article>
+                <h3>Superman</h3>
+                <img class="img-thumbnail" src="../static/photos/superman.jpeg" alt="">
+                <br>
+                <audio controls>
+                    <source src="../static/music/Tarrus Riley Superman [Xsongspk.me].mp3">
+                </audio>
+                <p class="textmat text-center"><em>By: Tarrus Riley</em></p>
+            </article>
+        </div>
+    </div>
+    <br>
+    <div class="parent">
+        <div class="left">
+            <article>
+                <h3>10000 hours</h3>
+                <img class="img-thumbnail" src="../static/photos/1000hrs.jpeg" alt="">
+                <br>
+                <audio controls>
+                    <source src="../static/music/Dan + Shay, Justin Bieber - 10,000 Hours 🎵.mp3">
+                </audio>
+                <p class="textmat text-center"><em>By: Dan & Shay</em></p>
+
+            </article>
+        </div>
+        <div class="right">
+            <article>
+                <h3>Life is Good</h3>
+
+                <img class="img-thumbnail" src="../static/photos/lifegood.jpeg" alt="">
+                <br>
+                <audio controls>
+                    <source src="../static/music/Future - Life Is Good ft. Drake.mp3">
+                </audio>
+                <p class="textma text-center"><em>By: Future ft Drake </em></p>
+            </article>
+        </div>
+    </div>
+    <br>
+    <div class="parent">
+        <div class="left">
+            <article>
+                <h3>Intentions</h3>
+                <img class="img-thumbnail" src="../static/photos/intentions.jpeg" alt="">
+                <br>
+                <audio controls>
+                    <source src="../static/music/Justin Bieber - Intentions ft. Quavo (Official Video).mp3">
+                </audio>
+                <p class="textma text-center"><em>By: Justin Beiber ft Quavo</em></p>
+            </article>
+        </div>
+        <div class="right">
+            <article>
+                <h3>No Time to Die</h3>
+                <img class="img-thumbnail" src="../static/photos/billie.jpeg" alt="">
+                <br>
+                <audio controls>
+                    <source src="../static/music/Billie Eilish - No Time To Die (Audio).mp3">
+                </audio>
+                <p class="textmat text-center"><em>By: Billie Ellish</em></p>
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
